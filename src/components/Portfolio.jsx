@@ -1,38 +1,44 @@
 import React from 'react';
 
-import arrayDestruct from '../assets/portfolio/arrayDestruct.jpg';
-import installNode from '../assets/portfolio/installNode.jpg';
-import navbar from '../assets/portfolio/navbar.jpg';
-import reactParallax from '../assets/portfolio/reactParallax.jpg';
-import reactSmooth from '../assets/portfolio/reactSmooth.jpg';
-import reactWeather from '../assets/portfolio/reactWeather.jpg';
+import antriqueCustomer from '../assets/portfolio/antrique-customer-app.png';
+import antriqueKiosk from '../assets/portfolio/antrique-kiosk-app.png';
+import dboApp from '../assets/portfolio/dbo-app.png';
+import antriqueOperator from '../assets/portfolio/antrique-operator-app.png';
+import boostApp from '../assets/portfolio/boost-app.png';
+import panoramaApp from '../assets/portfolio/panorama-app.png';
 
 const Portfolio = () => {
 
   const portfolios = [
     {
       id: 1,
-      src: arrayDestruct
+      src: antriqueCustomer,
+      href: 'https://play.google.com/store/apps/details?id=com.antrique.app',
     },
     {
       id: 2,
-      src: reactParallax
+      src: antriqueOperator,
+      href: 'https://play.google.com/store/apps/details?id=com.merchantantriquemobileapps'
     },
     {
       id: 3,
-      src: navbar
+      src: dboApp,
+      href: 'https://play.google.com/store/apps/details?id=com.dboapp'
     },
     {
       id: 4,
-      src: reactSmooth
+      src: boostApp,
+      href: 'https://play.google.com/store/apps/details?id=my.com.myboost'
     },
     {
       id: 5,
-      src: installNode
+      src: antriqueKiosk,
+      href: 'https://play.google.com/store/apps/details?id=com.antriquemachineapp'
     },
     {
       id: 6,
-      src: reactWeather
+      src: panoramaApp,
+      href: 'https://play.google.com/store/apps/details?id=com.panorama.id'
     },
   ];
 
@@ -45,12 +51,13 @@ const Portfolio = () => {
         </div>
 
         <div className='grid sm:grid-cols-2 md:grid-cols-3 gap-8 px-12 sm:px-0'>
-          {portfolios.map(({src, id}) => (
-            <div key={id} className='shadow-md shadow-gray-600 rounded-lg'>
+          {portfolios.map(({src, id, href}) => (
+            <div key={id} className='shadow-md shadow-gray-600 rounded-lg overflow-hidden'>
             <img className='rounded-md duration-200 hover:scale-105' src={src} alt='portfolio' />
             <div className='flex items-center justify-center'>
-              <button className='w-1/2 px-6 py-3 m-4 duration-200 hover:scale-105'>Demo</button>
-              <button className='w-1/2 px-6 py-3 m-4 duration-200 hover:scale-105'>Code</button>
+              <a href={href} target="_blank" rel="noreferrer">
+                <button className='w-1/2 px-6 py-3 m-4 duration-200 hover:scale-105'>Demo</button>
+              </a>
             </div>
           </div>
           ))}
